@@ -1,8 +1,12 @@
 #Javascript
 
-## let, var, const
+**[let](#let)**<br>
+**[var](#var)**<br>
+**[const](#const)**<br>
+**[if...else](#if...else)**<br>
+**[switch](#switch)**<br>
 
-### let
+## let
 
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong toàn block mà nó được khai báo
@@ -18,7 +22,7 @@ console.log(x);	//out
 console.log(y);	//Error
 ```
 
-### var
+## var
 
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong function bao quanh nó
@@ -42,7 +46,7 @@ function_name();	//out
 ```
 
 
-### const
+## const
 
 - Khai báo và khởi tạo giá trị hằng số
 - Ảnh hưởng trong toàn block mà nó được khai báo
@@ -60,3 +64,44 @@ MY_OBJECT.index = 49;	//OK
 MY_OBJECT = {}; //Error
 console.log(MY_OBJECT);
 ```
+
+## if...else
+
+- câu lệnh rẽ nhánh
+
+```
+if(condition){
+    console.log("condition = true");
+} else {
+    console.log("condition = false");
+}
+```
+
+- nếu condition = [0, -0, null, undefined, NaN, ""] sẽ cho giá trị false.
+
+```
+if(0){
+    // Câu lệnh này không được chạy
+} else {
+    // Câu lệnh này được chạy
+}
+```
+
+## switch
+
+### Cú pháp
+```
+switch(expression){
+    case value1:
+        statement1;
+        break;
+    case value2:
+        statement2;
+        break;
+    default:
+        default statement;
+}
+```
+
+- nếu expression === value1 statement1 sẽ được chạy và thoát khỏi switch.
+- nếu không có case nào === expression thì sẽ chạy default statement.
