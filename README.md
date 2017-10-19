@@ -1,10 +1,20 @@
 #Javascript
 
-**[let](#let)**<br>
-**[var](#var)**<br>
-**[const](#const)**<br>
-**[if...else](#if...else)**<br>
-**[switch](#switch)**<br>
+### Declarations
+- **[let](#let)**<br>
+- **[var](#var)**<br>
+- **[const](#const)**<br>
+
+### Control flow
+- **[if...else](#ifelse)**<br>
+- **[switch](#switch)**<br>
+
+### Iterations
+- **[for](#for)**<br>
+- **[while](#while)**<br>
+- **[do...while](#dowhile)**<br>
+- **[for...in](#forin)**<br>
+- **[for...of](#forof)**<br>
 
 ## let
 
@@ -105,3 +115,68 @@ switch(expression){
 
 - nếu expression === value1 statement1 sẽ được chạy và thoát khỏi switch.
 - nếu không có case nào === expression thì sẽ chạy default statement.
+
+## for
+```
+for (let i = 0; i < 5; i++) {
+	console.log(i);
+}
+```
+Kết quả
+```
+0
+1
+2
+3
+4
+```
+
+## while
+```
+let i = 0;
+while (i < 5) {
+	console.log(i);
+	i++;
+}
+```
+Kết quả
+```
+0
+1
+2
+3
+4
+```
+## do...while
+```
+let i = 0;
+do {
+	console.log(i);
+	i++;
+} while (i<5);
+```
+Kết quả
+```
+0
+1
+2
+3
+4
+```
+Trong trường hợp điều kiện trong while không thoả mãn thì câu lệnh trong do vẫn được thực hiện lần đầu tiên.
+```
+let i = 0;
+do {
+	console.log(i);
+	i++;
+} while (i>55);
+console.log(i);
+```
+Kết quả
+```
+0
+1
+```
+## for...in
+
+## for...of
