@@ -1,27 +1,27 @@
 #Javascript
 
 ### Declarations
-- **[let](#let)**<br>
-- **[var](#var)**<br>
-- **[const](#const)**<br>
+- **[let](#let)**
+- **[var](#var)**
+- **[const](#const)**
 
 ### Control flow
-- **[if...else](#ifelse)**<br>
-- **[switch](#switch)**<br>
+- **[if...else](#ifelse)**
+- **[switch](#switch)**
 
 ### Iterations
-- **[for](#for)**<br>
-- **[while](#while)**<br>
-- **[do...while](#dowhile)**<br>
-- **[for...in](#forin)**<br>
-- **[for...of](#forof)**<br>
+- **[for](#for)**
+- **[while](#while)**
+- **[do...while](#dowhile)**
+- **[for...in](#forin)**
+- **[for...of](#forof)**
 
 ## let
 
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong toàn block mà nó được khai báo
 
-```
+```javascript
 let x = 'out';
 {
 	let y = 'in';
@@ -37,7 +37,7 @@ console.log(y);	//Error
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong function bao quanh nó
 
-```
+```javascript
 var x = 'out';
 function function_name() {
 	console.log(x);	//out
@@ -46,7 +46,7 @@ console.log(x);	//out
 function_name();	//out
 ```
 
-```
+```javascript
 function function_name() {
 	var x = 'out';
 	console.log(x);	//out
@@ -62,12 +62,12 @@ function_name();	//out
 - Ảnh hưởng trong toàn block mà nó được khai báo
 - Không cho phép gán lại giá trị
 
-```
+```javascript
 const MY_CONST = 9;
 MY_CONST = 7;	//Error
 ```
 
-```
+```javascript
 const MY_OBJECT = {key: 45};
 MY_OBJECT.key = 48;	//OK
 MY_OBJECT.index = 49;	//OK
@@ -79,7 +79,7 @@ console.log(MY_OBJECT);
 
 - câu lệnh rẽ nhánh
 
-```
+```javascript
 if(condition){
     console.log("condition = true");
 } else {
@@ -89,7 +89,7 @@ if(condition){
 
 - nếu condition = [0, -0, null, undefined, NaN, ""] sẽ cho giá trị false.
 
-```
+```javascript
 if(0){
     // Câu lệnh này không được chạy
 } else {
@@ -100,7 +100,7 @@ if(0){
 ## switch
 
 ### Cú pháp
-```
+```javascript
 switch(expression){
     case value1:
         statement1;
@@ -117,13 +117,13 @@ switch(expression){
 - nếu không có case nào === expression thì sẽ chạy default statement.
 
 ## for
-```
+```javascript
 for (let i = 0; i < 5; i++) {
 	console.log(i);
 }
 ```
 Kết quả
-```
+```javascript
 0
 1
 2
@@ -132,7 +132,7 @@ Kết quả
 ```
 
 ## while
-```
+```javascript
 let i = 0;
 while (i < 5) {
 	console.log(i);
@@ -140,7 +140,7 @@ while (i < 5) {
 }
 ```
 Kết quả
-```
+```javascript
 0
 1
 2
@@ -148,7 +148,7 @@ Kết quả
 4
 ```
 ## do...while
-```
+```javascript
 let i = 0;
 do {
 	console.log(i);
@@ -156,7 +156,7 @@ do {
 } while (i<5);
 ```
 Kết quả
-```
+```javascript
 0
 1
 2
@@ -164,7 +164,7 @@ Kết quả
 4
 ```
 Trong trường hợp điều kiện trong while không thoả mãn thì câu lệnh trong do vẫn được thực hiện lần đầu tiên.
-```
+```javascript
 let i = 0;
 do {
 	console.log(i);
@@ -173,10 +173,64 @@ do {
 console.log(i);
 ```
 Kết quả
-```
+```javascript
 0
 1
 ```
 ## for...in
+- Lặp qua thuộc tính đếm được của một object (enumerable: true)
+```javascript
+for (variable in object) {
+	statement
+}
+```
+```javascript
+let obj = {
+	a: 40,
+	b: 30,
+	c: 50
+};
+for (var prop in obj) {
+	console.log(prop);
+}
+
+// "a"
+// "b"
+// "c"
+```
+```javascript
+let obj = {
+	a: 40,
+	b: 30,
+	c: 50
+};
+
+Object.defineProperty(obj, 'a', {
+  enumerable: false
+})
+
+for (var prop in obj) {
+	console.log(prop);
+}
+
+// "b"
+// "c"
+```
+
+
 
 ## for...of
+- Lặp qua iterable objects: `Array`, `Map`, `Set`, `String`, `TypedArray`
+```javascript
+let string = "giaduc";
+for (variable of string) {
+	console.log(variable);
+}
+
+// "g"
+// "i"
+// "a"
+// "d"
+// "u"
+// "c"
+```
