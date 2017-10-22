@@ -15,6 +15,8 @@
 - **[do...while](#dowhile)**
 - **[for...in](#forin)**
 - **[for...of](#forof)**
+### **[Function](#function)**
+### **[Classes](#classes)**
 
 ## let
 
@@ -121,14 +123,12 @@ switch(expression){
 for (let i = 0; i < 5; i++) {
 	console.log(i);
 }
-```
-Kết quả
-```javascript
-0
-1
-2
-3
-4
+
+// 0
+// 1
+// 2
+// 3
+// 4
 ```
 
 ## while
@@ -138,14 +138,12 @@ while (i < 5) {
 	console.log(i);
 	i++;
 }
-```
-Kết quả
-```javascript
-0
-1
-2
-3
-4
+
+// 0
+// 1
+// 2
+// 3
+// 4
 ```
 ## do...while
 ```javascript
@@ -154,14 +152,12 @@ do {
 	console.log(i);
 	i++;
 } while (i<5);
-```
-Kết quả
-```javascript
-0
-1
-2
-3
-4
+
+// 0
+// 1
+// 2
+// 3
+// 4
 ```
 Trong trường hợp điều kiện trong while không thoả mãn thì câu lệnh trong do vẫn được thực hiện lần đầu tiên.
 ```javascript
@@ -171,11 +167,9 @@ do {
 	i++;
 } while (i>55);
 console.log(i);
-```
-Kết quả
-```javascript
-0
-1
+
+// 0
+// 1
 ```
 ## for...in
 - Lặp qua thuộc tính đếm được của một object (enumerable: true)
@@ -233,4 +227,59 @@ for (variable of string) {
 // "d"
 // "u"
 // "c"
+```
+
+## function
+**Function declarations**
+- Can be hoisted
+```javascript
+function name([param[, param[, ... param]]]) {
+   statements
+}
+```
+**Function expressions**
+- Can be name or unnamed
+- Not hoisted
+```javascript
+var myFunction = function [name]([param1[, param2[, ..., paramN]]]) {
+   statements
+};
+```
+
+**Arrow function**
+```javascript
+([param[, param]]) => {
+   statements
+}
+```
+## classes
+**Class declarations**
+- Not hoisted
+```javascript
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+```
+**Class expressions**
+- Can be named or unnamed
+- Not hoisted
+```javascript
+// unnamed
+var Rectangle = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+// named
+var Rectangle = class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
 ```
