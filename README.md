@@ -17,6 +17,7 @@
 - **[for...of](#forof)**
 ### **[Function](#function)**
 ### **[Classes](#classes)**
+### **[Array](#array)**
 
 ## let
 
@@ -282,4 +283,61 @@ var Rectangle = class Rectangle {
     this.width = width;
   }
 };
+```
+
+## array
+**Add to the end of an Array**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange'];
+fruits.push('Strawberry');
+console.log(fruits);
+// ["Apple", "Banana", "Orange", "Strawberry"]
+```
+**Add to the front of an Array**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange'];
+fruits.unshift('Strawberry');
+console.log(fruits);
+// ["Strawberry", "Apple", "Banana", "Orange"]
+```
+**Remove from the end of an Array**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange'];
+fruits.pop();
+console.log(fruits);
+// ["Apple", "Banana"]
+```
+**Remove from the front of an Array**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange'];
+fruits.shift();
+console.log(fruits);
+// ["Banana", "Orange"]
+```
+**Remove an item by index position**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
+fruits.splice(1, 1);
+console.log(fruits);
+// ["Apple", "Orange", "Strawberry"]
+```
+**Remove items from an index position**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
+fruits.splice(2);
+console.log(fruits);
+// ["Apple", "Banana"]
+```
+**Find the index of an item in the Array**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
+console.log(fruits.indexOf('Banana'));
+// 1
+```
+**Copy an Array**
+```javascript
+var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
+var fruitsCopy = fruits.slice();
+console.log(fruitsCopy);
+// ["Apple", "Banana", "Orange", "Strawberry"]
 ```
