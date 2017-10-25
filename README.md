@@ -18,6 +18,9 @@
 ### **[Function](#function)**
 ### **[Classes](#classes)**
 ### **[Array](#array)**
+### **[Map](#map)**
+### **[Filter](#filter)**
+### **[Reduce](#reduce)**
 
 ## let
 
@@ -340,4 +343,66 @@ var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
 var fruitsCopy = fruits.slice();
 console.log(fruitsCopy);
 // ["Apple", "Banana", "Orange", "Strawberry"]
+```
+
+## map
+- Có sẵn 1 mảng, muốn thực hiện thao tác giống nhau với các phần tử trong mảng, trả về 1 mảng mới với số lượng phần bằng số lượng phần tử của mảng ban đầu
+```javascript
+const animals = [
+    {
+        "name": "cat",
+        "size": "small",
+        "weight": 5
+    },
+    {
+        "name": "dog",
+        "size": "small",
+        "weight": 10
+    },
+    {
+        "name": "lion",
+        "size": "medium",
+        "weight": 150
+    },
+    {
+        "name": "elephant",
+        "size": "big",
+        "weight": 5000
+    }
+];
+let animal_names = animals.map((animal, index, animals) => {
+    return animal.name
+});
+console.log(animal_names);
+// ["cat", "dog", "lion", "elephant"]
+```
+## filter
+- Có sẵn 1 mảng, muốn có 1 mảng mới với những phần tử từ mảng cũ thoả mãn điều kiện
+```javascript
+let small_animals = animals.filter((animal) => {
+    return animal.size === "small";
+});
+
+console.log(small_animals);
+// [
+//   {
+//     "name": "cat",
+//     "size": "small",
+//     "weight": 5
+//   },
+//   {
+//     "name": "dog",
+//     "size": "small",
+//     "weight": 10
+//   }
+// ]
+```
+## reduce
+- Có sẵn 1 mảng, muốn sử dụng những phần tử trong mảng để tạo ra một cái mới
+```javascript
+let total_weight = animals.reduce((weight, animal) => {
+    return weight += animal.weight
+}, 0);
+console.log(total_weight);
+// 5156
 ```
