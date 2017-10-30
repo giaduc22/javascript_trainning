@@ -23,7 +23,13 @@
 - **[Reduce](#reduce)**
 - **[Expressions and operators](#expressions-and-operators)**
 - **[Exception handling](#exception-handling)**
-
+---
+# React
+- **[Components](#components)**
+- **[Props](#props)**
+- **[State](#state)**
+- **[Lifecycle](#lifecycle)**
+---
 ## let
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong toàn block mà nó được khai báo
@@ -446,3 +452,27 @@ finally {
 }
 ```
 [Top](#)
+
+---
+## Components
+**Function components**
+- don’t have state
+- don’t have life cycle methods
+- don’t have a this
+```javascript
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+**Class components**
+- 
+```javascript
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+```
+## Props
+## State
+## Lifecycle
