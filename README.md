@@ -30,9 +30,12 @@
 - **[State](#state)**
 - **[Lifecycle](#lifecycle)**
 ---
+
 ## let
+
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong toàn block mà nó được khai báo
+
 ```javascript
 let x = 'out';
 {
@@ -43,10 +46,14 @@ let x = 'out';
 console.log(x);	//out
 console.log(y);	//Error
 ```
+
 [Top](#)
+
 ## var
+
 - Cho phép khai báo biến và khởi tạo giá trị cho biến
 - Ảnh hưởng trong function bao quanh nó
+
 ```javascript
 var x = 'out';
 function function_name() {
@@ -64,11 +71,15 @@ function function_name() {
 console.log(x);	//Error
 function_name();	//out
 ```
+
 [Top](#)
+
 ## const
+
 - Khai báo và khởi tạo giá trị hằng số
 - Ảnh hưởng trong toàn block mà nó được khai báo
 - Không cho phép gán lại giá trị
+
 ```javascript
 const MY_CONST = 9;
 MY_CONST = 7;	//Error
@@ -80,9 +91,13 @@ MY_OBJECT.index = 49;	//OK
 MY_OBJECT = {}; //Error
 console.log(MY_OBJECT);
 ```
+
 [Top](#)
+
 ## if...else
+
 - câu lệnh rẽ nhánh
+
 ```javascript
 if(condition){
     console.log("condition = true");
@@ -90,7 +105,9 @@ if(condition){
     console.log("condition = false");
 }
 ```
+
 - nếu condition = [0, -0, null, undefined, NaN, ""] sẽ cho giá trị false.
+
 ```javascript
 if(0){
     // Câu lệnh này không được chạy
@@ -98,9 +115,12 @@ if(0){
     // Câu lệnh này được chạy
 }
 ```
+
 [Top](#)
+
 ## switch
 ### Cú pháp
+
 ```javascript
 switch(expression){
     case value1:
@@ -113,10 +133,14 @@ switch(expression){
         default statement;
 }
 ```
+
 - nếu expression === value1 statement1 sẽ được chạy và thoát khỏi switch.
 - nếu không có case nào === expression thì sẽ chạy default statement.
+
 [Top](#)
+
 ## for
+
 ```javascript
 for (let i = 0; i < 5; i++) {
 	console.log(i);
@@ -128,8 +152,11 @@ for (let i = 0; i < 5; i++) {
 // 3
 // 4
 ```
+
 [Top](#)
+
 ## while
+
 ```javascript
 let i = 0;
 while (i < 5) {
@@ -143,8 +170,11 @@ while (i < 5) {
 // 3
 // 4
 ```
+
 [Top](#)
+
 ## do...while
+
 ```javascript
 let i = 0;
 do {
@@ -158,7 +188,9 @@ do {
 // 3
 // 4
 ```
+
 Trong trường hợp điều kiện trong while không thoả mãn thì câu lệnh trong do vẫn được thực hiện lần đầu tiên.
+
 ```javascript
 let i = 0;
 do {
@@ -170,9 +202,13 @@ console.log(i);
 // 0
 // 1
 ```
+
 [Top](#)
+
 ## for...in
+
 - Lặp qua thuộc tính đếm được của một object (enumerable: true)
+
 ```javascript
 for (variable in object) {
 	statement
@@ -210,9 +246,13 @@ for (var prop in obj) {
 // "b"
 // "c"
 ```
+
 [Top](#)
+
 ## for...of
+
 - Lặp qua iterable objects: `Array`, `Map`, `Set`, `String`, `TypedArray`
+
 ```javascript
 let string = "giaduc";
 for (variable of string) {
@@ -226,33 +266,45 @@ for (variable of string) {
 // "u"
 // "c"
 ```
+
 [Top](#)
+
 ## function
 **Function declarations**
+
 - Can be hoisted
+
 ```javascript
 function name([param[, param[, ... param]]]) {
    statements
 }
 ```
 **Function expressions**
+
 - Can be name or unnamed
 - Not hoisted
+
 ```javascript
 var myFunction = function [name]([param1[, param2[, ..., paramN]]]) {
    statements
 };
 ```
+
 **Arrow function**
+
 ```javascript
 ([param[, param]]) => {
    statements
 }
 ```
+
 [Top](#)
+
 ## classes
 **Class declarations**
+
 - Not hoisted
+
 ```javascript
 class Rectangle {
   constructor(height, width) {
@@ -262,8 +314,10 @@ class Rectangle {
 }
 ```
 **Class expressions**
+
 - Can be named or unnamed
 - Not hoisted
+
 ```javascript
 // unnamed
 var Rectangle = class {
@@ -281,16 +335,21 @@ var Rectangle = class Rectangle {
   }
 };
 ```
+
 [Top](#)
+
 ## array
 **Add to the end of an Array**
+
 ```javascript
 var fruits = ['Apple', 'Banana', 'Orange'];
 fruits.push('Strawberry');
 console.log(fruits);
 // ["Apple", "Banana", "Orange", "Strawberry"]
 ```
+
 **Add to the front of an Array**
+
 ```javascript
 var fruits = ['Apple', 'Banana', 'Orange'];
 fruits.unshift('Strawberry');
@@ -298,6 +357,7 @@ console.log(fruits);
 // ["Strawberry", "Apple", "Banana", "Orange"]
 ```
 **Remove from the end of an Array**
+
 ```javascript
 var fruits = ['Apple', 'Banana', 'Orange'];
 fruits.pop();
@@ -305,6 +365,7 @@ console.log(fruits);
 // ["Apple", "Banana"]
 ```
 **Remove from the front of an Array**
+
 ```javascript
 var fruits = ['Apple', 'Banana', 'Orange'];
 fruits.shift();
@@ -312,6 +373,7 @@ console.log(fruits);
 // ["Banana", "Orange"]
 ```
 **Remove an item by index position**
+
 ```javascript
 var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
 fruits.splice(1, 1);
@@ -319,6 +381,7 @@ console.log(fruits);
 // ["Apple", "Orange", "Strawberry"]
 ```
 **Remove items from an index position**
+
 ```javascript
 var fruits = ['Apple', 'Banana', 'Orange', 'Strawberry'];
 fruits.splice(2);
@@ -340,7 +403,9 @@ console.log(fruitsCopy);
 ```
 [Top](#)
 ## map
+
 - Có sẵn 1 mảng, muốn thực hiện thao tác giống nhau với các phần tử trong mảng, trả về 1 mảng mới với số lượng phần bằng số lượng phần tử của mảng ban đầu
+
 ```javascript
 const animals = [
     {
@@ -370,9 +435,13 @@ let animal_names = animals.map((animal, index, animals) => {
 console.log(animal_names);
 // ["cat", "dog", "lion", "elephant"]
 ```
+
 [Top](#)
+
 ## filter
+
 - Có sẵn 1 mảng, muốn có 1 mảng mới với những phần tử từ mảng cũ thoả mãn điều kiện
+
 ```javascript
 let small_animals = animals.filter((animal) => {
     return animal.size === "small";
@@ -392,9 +461,12 @@ console.log(small_animals);
 //   }
 // ]
 ```
+
 [Top](#)
 ## reduce
+
 - Có sẵn 1 mảng, muốn sử dụng những phần tử trong mảng để tạo ra một cái mới
+
 ```javascript
 let total_weight = animals.reduce((weight, animal) => {
     return weight += animal.weight
@@ -402,10 +474,13 @@ let total_weight = animals.reduce((weight, animal) => {
 console.log(total_weight);
 // 5156
 ```
+
 [Top](#)
+
 ## Expressions and operators
 ### Operators
 **Assignment operators**
+
 | Name                            | Shorthand operator | Meaning        |
 |---------------------------------|--------------------|----------------|
 | Assignment                      | x = y              | x = y          |
@@ -423,6 +498,7 @@ console.log(total_weight);
 | Bitwise OR assignment           | x &#124;= y        | x = x &#124; y |
 
 **Comparison operators**
+
 | Operator                   | Description                                                                                         | Examples returning true          |
 |----------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------|
 | Equal (==)                 | Returns true if the operands are equal.                                                             | 3 == var1, "3" == var1, 3 == '3' |
@@ -440,6 +516,7 @@ console.log(total_weight);
 [Top](#)
 ## Exception handling
 **try...catch...finally**
+
 ```javascript
 try {
     // tryCode - Block of code to try
@@ -456,15 +533,18 @@ finally {
 ---
 ## Components
 **Function components**
+
 - don’t have state
 - don’t have life cycle methods
 - don’t have a this
+
 ```javascript
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 ```
 **Class components**
+
 ```javascript
 class Welcome extends React.Component {
   render() {
@@ -517,3 +597,21 @@ updateCount() {
 }
 ```
 ## Lifecycle
+**Mount**
+
+- ***constructor()***
+- *componentWillMount()*
+- ***render()***
+- *componentDidMount()*
+
+**Update**
+
+- *componentWillReceiveProps()*
+- *shouldComponentUpdate()*
+- *componentWillUpdate()*
+- ***render()***
+- *componentDidUpdate()*
+
+**Unmount**
+
+- *componentWillUnmount()*
