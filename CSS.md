@@ -32,21 +32,28 @@
     ```css
         flex-direction: row;
     ```
+
     ![image](./images/flex-box.PNG)
+
     * column
     ```css
         flex-direction: column;
     ```
+
     ![image](./images/flex-box-column.PNG)
+
     * row-reverse
     ```css
         flex-direction: row-reverse;
     ```
+
     ![image](./images/flex-box-row-reverse.PNG)
+
     * column-reverse
     ```css
         flex-direction: column-reverse;
     ```
+
     ![image](./images/flex-box-column-reverse.PNG)
 
 
@@ -54,9 +61,11 @@
     * nowrap (default)
 
     ![image](./images/flex-nowrap.PNG)
+
     * wrap
 
     ![image](./images/flex-wrap.PNG)
+
     * wrap-reverse
 
     ![image](./images/wrap-reverse.PNG)
@@ -75,9 +84,11 @@
     * cross-axis
 
     *flex-direction: row;*
+
     ![image](https://cdn-images-1.medium.com/max/1600/1*HNXh6PZMPwd8ilBnOjpuRg.jpeg)
 
     *flex-direction: column*
+
     ![image](https://cdn-images-1.medium.com/max/800/1*zao5G4yng-qCJ-cHoLF3YA.jpeg)
 
 
@@ -85,6 +96,7 @@
 
 ```css
     justify-content: flex-start || flex-end || center || space-around || space-between;
+    /* default: flex-start */
 ```
 
 ![image](https://cdn-images-1.medium.com/max/800/1*N8WIcBNQH6-5yfksTlg7Ew.jpeg)
@@ -97,6 +109,17 @@
 
 ![image](https://cdn-images-1.medium.com/max/800/1*iiGq0PAUah_tUJP3DFP0Sw.jpeg)
 
+* **align-content**
+
+```css
+    align-content: flex-start || flex-end || center || space-between || space-around || stretch;
+```
+
+* **align-self**
+
+```css
+    align-self: flex-start || flex-end || center || baseline || stretch;
+```
 
 * **order**
 
@@ -104,6 +127,7 @@
     order: -1 || 0 || 1 || 2; 
     /* default is 0 */
 ```
+
 ![image](https://cdn-images-1.medium.com/max/800/1*jD9UD7NCKME3SxhjUDCTnA.jpeg)
 
 * **flex-grow**
