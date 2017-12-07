@@ -158,22 +158,22 @@ The children of the grid container. Here the item elements are grid items, but s
 #### Grid Line
 The dividing lines that make up the structure of the grid. They can be either vertical ("column grid lines") or horizontal ("row grid lines") and reside on either side of a row or column. Here the yellow line is an example of a column grid line.
 
-![grid-line](./images/grid-line.png)
+![grid-line](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-line.png)
 
 #### Grid Track
 The space between two adjacent grid lines. You can think of them like the columns or rows of the grid. Here's the grid track between the second and third row grid lines.
 
-![grid-track](./images/grid-track.png)
+![grid-track](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-track.png)
 
 #### Grid Cell
 The space between two adjacent row and two adjacent column grid lines. It's a single "unit" of the grid. Here's the grid cell between row grid lines 1 and 2, and column grid lines 2 and 3.
 
-![grid-cell](./images/grid-cell.png)
+![grid-cell](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-cell.png)
 
 #### Grid Area
 The total space surrounded by four grid lines. A grid area may be comprised of any number of grid cells. Here's the grid area between row grid lines 1 and 3, and column grid lines 1 and 3.
 
-![grid-cell](./images/grid-area.png)
+![grid-cell](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-area.png)
 
 ---
 
@@ -694,8 +694,156 @@ The total space surrounded by four grid lines. A grid area may be comprised of a
 1. grid-column-end
 1. grid-row-start
 1. grid-row-end
+
+    - Values
+        - [line] - can be a number to refer to a numbered grid line, or a name to refer to a named grid line
+        - [span number] - the item will span across the provided number of grid tracks
+        - [span name] - the item will span across until it hits the next line with the provided name
+        - auto - indicates auto-placement, an automatic span, or a default span of one
+    - Example 
+
+    ```css
+        .item-a {
+            grid-column-start: 2;
+            grid-column-end: five;
+            grid-row-start: row1-start;
+            grid-row-end: 3
+        }
+    ```
+
+    ![grid-column-row-start-end](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-start-end-a.png)
+
+    ```css
+        .item-b {
+            grid-column-start: 1;
+            grid-column-end: span col4-start;
+            grid-row-start: 2
+            grid-row-end: span 2
+        }
+    ```
+
+    ![grid-column-row-start-end](https://cdn.css-tricks.com/wp-content/uploads/2016/11/grid-start-end-b.png)
+
 1. grid-column
 1. grid-row
+
+    > Shorthand for grid-column-start + grid-column-end, and grid-row-start + grid-row-end, respectively.
+
+    - Values
+        - [start-line] / [end-line] - each one accepts all the same values as the longhand version, including span
+    - Example
+
+    ```css
+        .item-c {
+            grid-column: 3 / span 2;
+            grid-row: third-line / 4;
+        }
+    ```
+
+    ![grid-column-row](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-start-end-c.png)
+
 1. grid-area
+
+    - Values
+        - [name] - a name of your choosing
+        - [row-start] / [column-start] / [row-end] / [column-end] - can be numbers or named lines
+    - Example 
+
+    As a way to assign a name to the item:
+
+    ```css
+        .item-d {
+            grid-area: header
+        }
+    ```
+
+    As the short-shorthand for grid-row-start + grid-column-start + grid-row-end + grid-column-end:
+
+    ```css 
+        .item-d {
+            grid-area: 1 / col4-start / last-line / 6
+        }
+    ```
+
+    ![grid-area](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-start-end-d.png)
+
 1. justify-self
+
+    - Values
+     - start - aligns the content to the left end of the grid area
+     - end - aligns the content to the right end of the grid area
+     - center - aligns the content in the center of the grid area
+     - stretch - fills the whole width of the grid area (this is the default)
+    - Example
+
+    ```css
+        .item-a {
+            justify-self: start;
+        }
+    ```
+
+    ![grid-justify-self-start](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-justify-self-start.png)
+
+    ```css
+        .item-a {
+            justify-self: end;
+        }
+    ```
+
+    ![grid-justify-self-end](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-justify-self-end.png)
+
+    ```css
+        .item-a {
+            justify-self: center;
+        }
+    ```
+
+    ![grid-justify-self-center](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-justify-self-center.png)
+
+    ```css
+        .item-a {
+            justify-self: stretch;
+        }
+    ```
+
+    ![grid-justify-self-stretch](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-justify-self-stretch.png)    
 1. align-self
+
+    - Values
+        -  start - aligns the content to the top of the grid area
+        - end - aligns the content to the bottom of the grid area
+        - center - aligns the content in the center of the grid area
+        - stretch - fills the whole height of the grid area (this is the default)
+    - Example
+
+    ```css
+        .item-a {
+            align-self: start;
+        }
+    ```
+
+    ![grid-align-self-start](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-align-self-start.png)
+
+    ```css
+        .item-a {
+            align-self: end;
+        }
+    ```
+
+    ![grid-align-self-end](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-align-self-end.png)
+
+    ```css
+        .item-a {
+            align-self: center;
+        }
+    ```
+
+    ![grid-align-self-center](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-align-self-center.png)
+
+    ```css
+        .item-a {
+            align-self: stretch;
+        }
+    ```
+
+    ![grid-align-self-stretch](https://cdn.css-tricks.com/wp-content/uploads/2016/03/grid-align-self-stretch.png)
